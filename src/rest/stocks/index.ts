@@ -1,5 +1,6 @@
 import { auth } from "../transport/request";
 import {
+  IAdjustedQuery,
   IAggregateQuery,
   IAggResponseFormatted,
   stocksAggregates,
@@ -40,7 +41,11 @@ import {
   v2HistoricTrades
 } from "./v2HistoricTrades";
 
-export { IAggregateQuery, IAggResponseFormatted } from "./aggregates";
+export {
+  IAdjustedQuery,
+  IAggregateQuery,
+  IAggResponseFormatted
+} from "./aggregates";
 export { IConditionMappings } from "./conditionMappings";
 export { IDailyOpenClose } from "./dailyOpenClose";
 export { IExchangeFormatted } from "./exchanges";
@@ -103,7 +108,7 @@ export interface IStocksClient {
   ) => Promise<ISnapshotGainersLosersResultFormatted>;
   previousClose: (
     ticker: string,
-    query?: IAggregateQuery
+    query?: IAdjustedQuery
   ) => Promise<IAggResponseFormatted>;
   aggregates: (
     ticker: string,
@@ -117,7 +122,7 @@ export interface IStocksClient {
     locale: string,
     market: string,
     date: string,
-    query?: IAggregateQuery
+    query?: IAdjustedQuery
   ) => Promise<IAggResponseFormatted>;
 }
 

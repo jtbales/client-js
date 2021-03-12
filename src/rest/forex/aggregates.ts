@@ -1,6 +1,7 @@
 import { get } from "../transport/request";
 import {
   formatIAggResponseRaw,
+  IAdjustedQuery,
   IAggregateQuery,
   IAggResponseFormatted
 } from "../stocks/aggregates";
@@ -9,7 +10,7 @@ import {
 export const forexPreviousClose = async (
   apiKey: string,
   ticker: string,
-  query?: IAggregateQuery
+  query?: IAdjustedQuery
 ): Promise<IAggResponseFormatted> =>
   formatIAggResponseRaw(
     await get(`/v2/aggs/ticker/${ticker}/prev`, apiKey, query)
@@ -39,7 +40,7 @@ export const forexGroupedDaily = async (
   locale: string,
   market: string = "FX",
   date: string,
-  query?: IAggregateQuery
+  query?: IAdjustedQuery
 ): Promise<IAggResponseFormatted> =>
   formatIAggResponseRaw(
     await get(
