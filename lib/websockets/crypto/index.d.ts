@@ -1,4 +1,3 @@
-import { w3cwebsocket as Websocket } from "websocket";
 export interface IQuoteCryptoEvent {
   ev: string;
   pair: string;
@@ -58,4 +57,4 @@ export interface ILevel2CryptoEvent {
   x: number;
   r: number;
 }
-export declare const getCryptoWebsocket: (apiKey: string) => Websocket;
+export declare const getCryptoWebsocket: (apiKey: string) => any;
