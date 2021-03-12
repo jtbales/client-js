@@ -1,5 +1,5 @@
 // Crypto QUOTE:
-import { w3cwebsocket as Websocket } from "websocket";
+import * as WebSocket from "ws";
 import { getWsClient } from "../transport";
 
 export interface IQuoteCryptoEvent {
@@ -70,5 +70,5 @@ export interface ILevel2CryptoEvent {
   r: number; // Tick Received @ Polygon Timestamp
 }
 
-export const getCryptoWebsocket = (apiKey: string): Websocket =>
+export const getCryptoWebsocket = (apiKey: string): WebSocket =>
   getWsClient("wss://socket.polygon.io/crypto", apiKey);

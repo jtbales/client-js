@@ -11,6 +11,25 @@
     "build": "tsc",
     "generate-doc": "typedoc"
   },
+  "dependencies": {
+    "ws": "^7.4.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.12",
+    "@types/sinon": "^7.5.0",
+    "@types/websocket": "^1.0.0",
+    "chai": "^4.2.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "mocha": "^6.2.1",
+    "prettier": "1.18.2",
+    "sinon": "^7.5.0",
+    "ts-node": "^8.4.1",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/polygon-io/client-js.git"
@@ -29,22 +48,6 @@
     "url": "https://github.com/polygon-io/client-js/issues"
   },
   "homepage": "https://github.com/polygon-io/client-js#readme",
-  "devDependencies": {
-    "@types/chai": "^4.2.3",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.12",
-    "@types/sinon": "^7.5.0",
-    "@types/websocket": "^1.0.0",
-    "chai": "^4.2.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
-    "mocha": "^6.2.1",
-    "prettier": "1.18.2",
-    "sinon": "^7.5.0",
-    "ts-node": "^8.4.1",
-    "typedoc": "^0.15.0",
-    "typescript": "^3.6.4"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -55,11 +58,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "dependencies": {
-    "cross-fetch": "^3.0.4",
-    "query-string": "^6.10.1",
-    "websocket": "^1.0.31",
-    "ws": "^7.4.4"
   }
 }
