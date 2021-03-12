@@ -63,15 +63,19 @@ export const formatIAggResponseRaw = (
   results: raw.results.map(formatIAggv2Raw)
 });
 
+export interface IAdjustedQuery extends IPolygonQuery {
+  adjusted?: boolean;
+}
 export interface IAggregateQuery extends IPolygonQuery {
   adjusted?: boolean;
+  limit?: number;
 }
 
 // CF : https://polygon.io/docs/#!/Stocks--Equities/get_v2_aggs_ticker_ticker_prev
 export const stocksPreviousClose = async (
   apiKey: string,
   ticker: string,
-  query?: IAggregateQuery
+  query?: IAdjustedQuery
 ): Promise<IAggResponseFormatted> =>
   formatIAggResponseRaw(
     await get(`/v2/aggs/ticker/${ticker}/prev`, apiKey, query)
@@ -101,7 +105,7 @@ export const stocksGroupedDaily = async (
   locale: string,
   market: string,
   date: string,
-  query?: IAggregateQuery
+  query?: IAdjustedQuery
 ): Promise<IAggResponseFormatted> =>
   formatIAggResponseRaw(
     await get(
