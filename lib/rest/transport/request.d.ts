@@ -1,5 +1,5 @@
 export interface IPolygonQuery {
-  [key: string]: string | number | boolean;
+  [key: string]: string | number | boolean | undefined;
 }
 export interface IPolygonQueryWithCredentials extends IPolygonQuery {
   apiKey: string | boolean;

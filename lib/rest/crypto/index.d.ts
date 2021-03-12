@@ -9,7 +9,11 @@ import {
   IHistoricCryptoTradeQuery,
   IHistoricCryptoTradeFormatted
 } from "./historicCryptoTrades";
-import { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
+import {
+  IAdjustedQuery,
+  IAggregateQuery,
+  IAggResponseFormatted
+} from "../stocks/aggregates";
 import { ICryptoDailyOpenCloseFormatted } from "./ICryptoTickJson";
 export { ICryptoExchanges } from "./cryptoExchanges";
 export { ILastTradeForACryptoPair } from "./lastTradeForACryptoPair";
@@ -18,7 +22,11 @@ export {
   ICryptoSnapshotAllTickersFormatted,
   ICryptoSingleTickerFullBookFormatted
 } from "./snapshots";
-export { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
+export {
+  IAdjustedQuery,
+  IAggregateQuery,
+  IAggResponseFormatted
+} from "../stocks/aggregates";
 export {
   IHistoricCryptoTradeQuery,
   IHistoricCryptoTradeFormatted
@@ -53,7 +61,7 @@ export interface ICryptoClient {
   ) => Promise<ICryptoSingleTickerFullBookFormatted>;
   previousClose: (
     ticker: string,
-    query?: IAggregateQuery
+    query?: IAdjustedQuery
   ) => Promise<IAggResponseFormatted>;
   aggregates: (
     ticker: string,
@@ -67,7 +75,7 @@ export interface ICryptoClient {
     locale: string,
     market: string,
     date: string,
-    query?: IAggregateQuery
+    query?: IAdjustedQuery
   ) => Promise<IAggResponseFormatted>;
 }
 export declare const cryptoClient: (apiKey: any) => ICryptoClient;

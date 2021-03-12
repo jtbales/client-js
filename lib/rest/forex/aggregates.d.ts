@@ -1,8 +1,12 @@
-import { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
+import {
+  IAdjustedQuery,
+  IAggregateQuery,
+  IAggResponseFormatted
+} from "../stocks/aggregates";
 export declare const forexPreviousClose: (
   apiKey: string,
   ticker: string,
-  query?: IAggregateQuery
+  query?: IAdjustedQuery
 ) => Promise<IAggResponseFormatted>;
 export declare const forexAggregates: (
   apiKey: string,
@@ -18,5 +22,5 @@ export declare const forexGroupedDaily: (
   locale: string,
   market: string,
   date: string,
-  query?: IAggregateQuery
+  query?: IAdjustedQuery
 ) => Promise<IAggResponseFormatted>;

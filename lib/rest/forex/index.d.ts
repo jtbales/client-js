@@ -8,7 +8,11 @@ import {
   IRealTimeConversionQuery,
   IRealTimeConversion
 } from "./realTimeCurrencyConversion";
-import { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
+import {
+  IAdjustedQuery,
+  IAggregateQuery,
+  IAggResponseFormatted
+} from "../stocks/aggregates";
 export { ILastQuoteForCurrencyPair } from "./lastQuoteForCurrencyPair";
 export {
   IHistoricForexTicksQuery,
@@ -18,7 +22,11 @@ export {
   IRealTimeConversionQuery,
   IRealTimeConversion
 } from "./realTimeCurrencyConversion";
-export { IAggregateQuery, IAggResponseFormatted } from "../stocks/aggregates";
+export {
+  IAdjustedQuery,
+  IAggregateQuery,
+  IAggResponseFormatted
+} from "../stocks/aggregates";
 export { IForexSnapshotAllTickersResponseFormatted } from "./snapshots";
 export interface IForexClient {
   lastQuoteForCurrencyPair: (
@@ -38,7 +46,7 @@ export interface IForexClient {
   ) => Promise<IRealTimeConversion>;
   previousClose: (
     ticker: string,
-    query?: IAggregateQuery
+    query?: IAdjustedQuery
   ) => Promise<IAggResponseFormatted>;
   aggregates: (
     ticker: string,
@@ -52,7 +60,7 @@ export interface IForexClient {
     locale: string,
     market: string,
     date: string,
-    query?: IAggregateQuery
+    query?: IAdjustedQuery
   ) => Promise<IAggResponseFormatted>;
   snapshotAllTickers: () => Promise<IForexSnapshotAllTickersResponseFormatted>;
   snapshotGainersLosers: (
