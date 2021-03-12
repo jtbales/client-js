@@ -1,2 +1,2 @@
-import * as WebSocket from "ws";
-export declare const getWsClient: (url: string, apiKey: string) => WebSocket;
+import { w3cwebsocket as Websocket } from "websocket";
+export declare const getWsClient: (url: string, apiKey: string) => Websocket;

@@ -46,13 +46,17 @@ export interface IAggResponseFormatted {
 export declare const formatIAggResponseRaw: (
   raw: IAggResponseRaw
 ) => IAggResponseFormatted;
+export interface IAdjustedQuery extends IPolygonQuery {
+  adjusted?: boolean;
+}
 export interface IAggregateQuery extends IPolygonQuery {
   adjusted?: boolean;
+  limit?: number;
 }
 export declare const stocksPreviousClose: (
   apiKey: string,
   ticker: string,
-  query?: IAggregateQuery
+  query?: IAdjustedQuery
 ) => Promise<IAggResponseFormatted>;
 export declare const stocksAggregates: (
   apikey: string,
@@ -68,5 +72,5 @@ export declare const stocksGroupedDaily: (
   locale: string,
   market: string,
   date: string,
-  query?: IAggregateQuery
+  query?: IAdjustedQuery
 ) => Promise<IAggResponseFormatted>;

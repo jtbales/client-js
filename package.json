@@ -34,9 +34,7 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.12",
     "@types/sinon": "^7.5.0",
-
     "@types/websocket": "^1.0.0",
-
     "chai": "^4.2.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
@@ -59,10 +57,9 @@
     ]
   },
   "dependencies": {
-
     "cross-fetch": "^3.0.4",
     "query-string": "^6.10.1",
-    "websocket": "^1.0.31"
-
+    "websocket": "^1.0.31",
+    "ws": "^7.4.4"
   }
 }

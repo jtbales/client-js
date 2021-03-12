@@ -1,4 +1,4 @@
-import * as WebSocket from "ws";
+import { w3cwebsocket as Websocket } from "websocket";
 export interface ITradeStockEvent {
   ev: string;
   sym: string;
@@ -34,7 +34,8 @@ export interface IAggregateStockEvent {
   h: number;
   l: number;
   a: number;
+  z: number;
   s: number;
   e: number;
 }
-export declare const getStocksWebsocket: (apiKey: string) => WebSocket;
+export declare const getStocksWebsocket: (apiKey: string) => Websocket;

@@ -1,4 +1,4 @@
-import * as WebSocket from "ws";
+import { w3cwebsocket as Websocket } from "websocket";
 export interface IQuoteForexEvent {
   ev: string;
   p: string;
@@ -17,4 +17,4 @@ export interface IAggegateForexEvent {
   v: number;
   s: number;
 }
-export declare const getForexWebsocket: (apiKey: string) => WebSocket;
+export declare const getForexWebsocket: (apiKey: string) => Websocket;
