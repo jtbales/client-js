@@ -84,7 +84,7 @@ export interface IV2HistoricQuotesResultFormatted {
   db_latency?: number;
   success: boolean;
   ticker: string;
-  results?: IQuoteV2Raw[];
+  results?: IQuoteV2Formatted[];
 }
 const formatIV2HistoricQuotesResultRaw = (
   raw: IV2HistoricQuotesResultRaw

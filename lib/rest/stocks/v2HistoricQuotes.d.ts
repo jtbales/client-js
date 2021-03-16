@@ -64,7 +64,7 @@ export interface IV2HistoricQuotesResultFormatted {
   db_latency?: number;
   success: boolean;
   ticker: string;
-  results?: IQuoteV2Raw[];
+  results?: IQuoteV2Formatted[];
 }
 export declare const v2HistoricQuotes: (
   apiKey: string,
