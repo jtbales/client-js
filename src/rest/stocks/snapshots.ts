@@ -52,7 +52,7 @@ export interface IStocksSnapshotQuoteFormatted {
   S: number;
   askSize: number;
   t: number;
-  lastUpdateTimestam: number;
+  lastUpdateTimestamp: number;
 }
 export const formatIStocksSnapshotQuoteRaw = (
   raw: IStocksSnapshotQuoteRaw
@@ -62,7 +62,7 @@ export const formatIStocksSnapshotQuoteRaw = (
   bidSize: raw.s,
   askPrice: raw.P,
   askSize: raw.S,
-  lastUpdateTimestam: raw.t
+  lastUpdateTimestamp: raw.t
 });
 
 export interface IStocksSnapshotTickerRaw {

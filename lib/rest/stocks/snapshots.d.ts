@@ -38,7 +38,7 @@ export interface IStocksSnapshotQuoteFormatted {
   S: number;
   askSize: number;
   t: number;
-  lastUpdateTimestam: number;
+  lastUpdateTimestamp: number;
 }
 export declare const formatIStocksSnapshotQuoteRaw: (
   raw: IStocksSnapshotQuoteRaw
