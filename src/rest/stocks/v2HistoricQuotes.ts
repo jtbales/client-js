@@ -10,9 +10,9 @@ export interface IV2HistoricQuotesQuery extends IPolygonQuery {
 
 export interface IQuoteV2Raw {
   T?: string;
-  t?: number;
-  y?: number;
-  f: number;
+  t: number;
+  y: number;
+  f?: number;
   q: number;
   c?: number[];
   i?: number[];
@@ -27,12 +27,12 @@ export interface IQuoteV2Raw {
 export interface IQuoteV2Formatted {
   T?: string;
   ticker?: string;
-  t?: number;
-  SIPTimestamp?: number;
-  y?: number;
-  participantExchangeTimestamp?: number;
-  f: number;
-  tradeReportingFacilityTimestamp: number;
+  t: number;
+  SIPTimestamp: number;
+  y: number;
+  participantExchangeTimestamp: number;
+  f?: number;
+  tradeReportingFacilityTimestamp?: number;
   q: number;
   sequenceNumber: number;
   c?: number[];

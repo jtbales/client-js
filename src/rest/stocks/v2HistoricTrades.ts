@@ -10,7 +10,7 @@ export interface IV2HistoricTradesQuery extends IPolygonQuery {
 export interface ITradeV2Raw {
   T?: string;
   t: number;
-  y?: number;
+  y: number;
   r?: number;
   f?: number;
   q: number;
@@ -26,8 +26,8 @@ export interface ITradeV2Formatted {
   ticker?: string;
   t: number;
   SIPTimestamp: number;
-  y?: number;
-  participantExchangeTimestamp?: number;
+  y: number;
+  participantExchangeTimestamp: number;
   f?: number;
   tradeReportingFacilityTimestamp?: number;
   q: number;

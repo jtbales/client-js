@@ -40,7 +40,12 @@ export const get = (
       });
 
       response.on("end", function() {
-        resolve(JSON.parse(data));
+        const parsed = JSON.parse(data);
+        if (parsed.error) {
+          reject(parsed.error);
+          // throw new Error(parsed.error);
+        }
+        resolve(parsed);
       });
     });
 
