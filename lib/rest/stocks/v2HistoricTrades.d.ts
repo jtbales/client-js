@@ -9,6 +9,7 @@ export interface ITradeV2Raw {
   T?: string;
   t: number;
   y?: number;
+  r?: number;
   f?: number;
   q: number;
   i: string;
@@ -40,7 +41,7 @@ export interface ITradeV2Formatted {
   p: number;
   price: number;
   z: number;
-  tapeWhereTheTradeOccured: number;
+  tapeWhereTheTradeOccurred: number;
 }
 export declare const formatITradeV2Raw: (raw: ITradeV2Raw) => ITradeV2Formatted;
 export interface IV2HistoricTradesResultRaw {
@@ -48,14 +49,14 @@ export interface IV2HistoricTradesResultRaw {
   db_latency?: number;
   success: boolean;
   ticker: string;
-  ticks: ITradeV2Raw[];
+  results: ITradeV2Raw[];
 }
 export interface IV2HistoricTradesResultFormatted {
   results_count?: number;
   db_latency?: number;
   success: boolean;
   ticker: string;
-  ticks: ITradeV2Formatted[];
+  results: ITradeV2Formatted[];
 }
 export declare const formatIV2HistoricTradeResultRaw: (
   raw: IV2HistoricTradesResultRaw

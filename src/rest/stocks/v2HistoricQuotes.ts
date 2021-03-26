@@ -52,7 +52,7 @@ export interface IQuoteV2Formatted {
   S: number;
   askSize: number;
   z: number;
-  tapeWhereTradeOccured: number;
+  tapeWhereTradeOccurred: number;
 }
 export const formatIQuoteV2Raw = (raw: IQuoteV2Raw): IQuoteV2Formatted => ({
   ...raw,
@@ -69,7 +69,7 @@ export const formatIQuoteV2Raw = (raw: IQuoteV2Raw): IQuoteV2Formatted => ({
   askPrice: raw.p,
   askExchangeId: raw.X,
   askSize: raw.S,
-  tapeWhereTradeOccured: raw.z
+  tapeWhereTradeOccurred: raw.z
 });
 
 export interface IV2HistoricQuotesResultRaw {

@@ -11,6 +11,7 @@ export interface ITradeV2Raw {
   T?: string;
   t: number;
   y?: number;
+  r?: number;
   f?: number;
   q: number;
   i: string;
@@ -42,21 +43,21 @@ export interface ITradeV2Formatted {
   p: number;
   price: number;
   z: number;
-  tapeWhereTheTradeOccured: number;
+  tapeWhereTheTradeOccurred: number;
 }
 export const formatITradeV2Raw = (raw: ITradeV2Raw): ITradeV2Formatted => ({
   ...raw,
   ticker: raw.T,
   SIPTimestamp: raw.t,
   participantExchangeTimestamp: raw.y,
-  tradeReportingFacilityTimestamp: raw.y,
+  tradeReportingFacilityTimestamp: raw.r,
   sequenceNumber: raw.q,
   tradeId: raw.i,
   exchange: raw.x,
   size: raw.s,
   conditions: raw.c,
   price: raw.p,
-  tapeWhereTheTradeOccured: raw.z
+  tapeWhereTheTradeOccurred: raw.z
 });
 
 export interface IV2HistoricTradesResultRaw {
@@ -64,20 +65,20 @@ export interface IV2HistoricTradesResultRaw {
   db_latency?: number;
   success: boolean;
   ticker: string;
-  ticks: ITradeV2Raw[];
+  results: ITradeV2Raw[];
 }
 export interface IV2HistoricTradesResultFormatted {
   results_count?: number;
   db_latency?: number;
   success: boolean;
   ticker: string;
-  ticks: ITradeV2Formatted[];
+  results: ITradeV2Formatted[];
 }
 export const formatIV2HistoricTradeResultRaw = (
   raw: IV2HistoricTradesResultRaw
 ): IV2HistoricTradesResultFormatted => ({
   ...raw,
-  ticks: raw.ticks.map(formatITradeV2Raw)
+  results: raw.results.map(formatITradeV2Raw)
 });
 
 export const v2HistoricTrades = async (
