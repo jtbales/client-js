@@ -6,5 +6,5 @@ export interface ICryptoExchanges {
   url: string;
 }
 export declare const cryptoExchanges: (
-  apiKey: string
+  apiKey: string,
 ) => Promise<ICryptoExchanges[]>;

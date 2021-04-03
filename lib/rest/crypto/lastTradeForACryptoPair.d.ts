@@ -18,5 +18,5 @@ export interface ILastTradeForACryptoPair {
 export declare const lastTradeForCryptoPair: (
   apiKey: string,
   from: string,
-  to: string
+  to: string,
 ) => Promise<ILastTradeForACryptoPair>;

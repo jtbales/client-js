@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface IV1HistoricQuotesQuery extends IPolygonQuery {
   limit?: number;
   offset?: number;
@@ -67,11 +67,11 @@ export interface IV1HistoricQuotesResultFormatted {
   ticks: IQuoteV1Formatted[];
 }
 export declare const formatIV1HistoricQuotesResultRaw: (
-  raw: IV1HistoricQuotesResultRaw
+  raw: IV1HistoricQuotesResultRaw,
 ) => IV1HistoricQuotesResultFormatted;
 export declare const v1HistoricQuotes: (
   apiKey: string,
   symbol: string,
   date: string,
-  query?: IV1HistoricQuotesQuery
+  query?: IV1HistoricQuotesQuery,
 ) => Promise<IV1HistoricQuotesResultFormatted>;

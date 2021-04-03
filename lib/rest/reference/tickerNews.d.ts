@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface ITickerNewsQuery extends IPolygonQuery {
   perpage?: number;
   page?: number;
@@ -16,5 +16,5 @@ export interface ITickerNews {
 export declare const tickerNews: (
   apiKey: string,
   symbol: string,
-  query?: ITickerNewsQuery
+  query?: ITickerNewsQuery,
 ) => Promise<ITickerNews[]>;

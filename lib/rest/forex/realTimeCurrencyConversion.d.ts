@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface IRealTimeConversionQuery extends IPolygonQuery {
   amount: number;
   precision: number;
@@ -21,5 +21,5 @@ export declare const realTimeCurrencyConversion: (
   apiKey: string,
   from: string,
   to: string,
-  query: IRealTimeConversionQuery
+  query: IRealTimeConversionQuery,
 ) => Promise<IRealTimeConversion>;

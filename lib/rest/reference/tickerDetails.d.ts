@@ -48,5 +48,5 @@ export interface ITickerDetailsFormatted {
 }
 export declare const tickerDetails: (
   apiKey: string,
-  symbol: string
+  symbol: string,
 ) => Promise<ITickerDetailsFormatted>;

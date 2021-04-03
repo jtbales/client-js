@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface IV1ForexRaw {
   a: number;
   b: number;
@@ -46,5 +46,5 @@ export declare const historicForexTicks: (
   from: string,
   to: string,
   date: string,
-  query: IHistoricForexTicksQuery
+  query: IHistoricForexTicksQuery,
 ) => Promise<IHistoricForexTicksFormatted>;

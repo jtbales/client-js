@@ -15,5 +15,5 @@ export interface IStockSplitsResults {
 }
 export declare const stockSplits: (
   apiKey: string,
-  symbol: string
+  symbol: string,
 ) => Promise<IStockSplitsResults>;

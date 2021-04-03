@@ -1,65 +1,65 @@
 import {
   IAdjustedQuery,
   IAggregateQuery,
-  IAggResponseFormatted
-} from "./aggregates";
-import { IConditionMappings } from "./conditionMappings";
-import { IDailyOpenClose } from "./dailyOpenClose";
-import { IExchangeFormatted } from "./exchanges";
-import { ILastQuoteResult } from "./lastQuoteForSymbol";
-import { ILastTradeResult } from "./lastTradeForSymbol";
+  IAggResponseFormatted,
+} from './aggregates';
+import { IConditionMappings } from './conditionMappings';
+import { IDailyOpenClose } from './dailyOpenClose';
+import { IExchangeFormatted } from './exchanges';
+import { ILastQuoteResult } from './lastQuoteForSymbol';
+import { ILastTradeResult } from './lastTradeForSymbol';
 import {
   ISnapshotAllTickersResultFormatted,
   ISnapshotGainersLosersResultFormatted,
-  ISnapshotSingleTickerResultFormatted
-} from "./snapshots";
+  ISnapshotSingleTickerResultFormatted,
+} from './snapshots';
 import {
   IV1HistoricQuotesQuery,
-  IV1HistoricQuotesResultFormatted
-} from "./v1HistoricQuotes";
+  IV1HistoricQuotesResultFormatted,
+} from './v1HistoricQuotes';
 import {
   IV1HistoricTradesQuery,
-  IV1HistoricTradesResultFormatted
-} from "./v1HistoricTrades";
+  IV1HistoricTradesResultFormatted,
+} from './v1HistoricTrades';
 import {
   IV2HistoricQuotesQuery,
-  IV2HistoricQuotesResultFormatted
-} from "./v2HistoricQuotes";
+  IV2HistoricQuotesResultFormatted,
+} from './v2HistoricQuotes';
 import {
   IV2HistoricTradesQuery,
-  IV2HistoricTradesResultFormatted
-} from "./v2HistoricTrades";
+  IV2HistoricTradesResultFormatted,
+} from './v2HistoricTrades';
 export {
   IAdjustedQuery,
   IAggregateQuery,
-  IAggResponseFormatted
-} from "./aggregates";
-export { IConditionMappings } from "./conditionMappings";
-export { IDailyOpenClose } from "./dailyOpenClose";
-export { IExchangeFormatted } from "./exchanges";
-export { ILastQuoteResult } from "./lastQuoteForSymbol";
-export { ILastTradeResult } from "./lastTradeForSymbol";
+  IAggResponseFormatted,
+} from './aggregates';
+export { IConditionMappings } from './conditionMappings';
+export { IDailyOpenClose } from './dailyOpenClose';
+export { IExchangeFormatted } from './exchanges';
+export { ILastQuoteResult } from './lastQuoteForSymbol';
+export { ILastTradeResult } from './lastTradeForSymbol';
 export {
   ISnapshotAllTickersResultFormatted,
   ISnapshotGainersLosersResultFormatted,
-  ISnapshotSingleTickerResultFormatted
-} from "./snapshots";
+  ISnapshotSingleTickerResultFormatted,
+} from './snapshots';
 export {
   IV1HistoricQuotesQuery,
-  IV1HistoricQuotesResultFormatted
-} from "./v1HistoricQuotes";
+  IV1HistoricQuotesResultFormatted,
+} from './v1HistoricQuotes';
 export {
   IV1HistoricTradesQuery,
-  IV1HistoricTradesResultFormatted
-} from "./v1HistoricTrades";
+  IV1HistoricTradesResultFormatted,
+} from './v1HistoricTrades';
 export {
   IV2HistoricQuotesQuery,
-  IV2HistoricQuotesResultFormatted
-} from "./v2HistoricQuotes";
+  IV2HistoricQuotesResultFormatted,
+} from './v2HistoricQuotes';
 export {
   IV2HistoricTradesQuery,
-  IV2HistoricTradesResultFormatted
-} from "./v2HistoricTrades";
+  IV2HistoricTradesResultFormatted,
+} from './v2HistoricTrades';
 export interface IStocksClient {
   conditionMappings: (ticktype?: string) => Promise<IConditionMappings>;
   dailyOpenClose: (symbol: string, date: string) => Promise<IDailyOpenClose>;
@@ -69,33 +69,33 @@ export interface IStocksClient {
   v1HistoricQuotes: (
     symbol: string,
     date: string,
-    query?: IV1HistoricQuotesQuery
+    query?: IV1HistoricQuotesQuery,
   ) => Promise<IV1HistoricQuotesResultFormatted>;
   v1HistoricTrades: (
     symbol: string,
     date: string,
-    query?: IV1HistoricTradesQuery
+    query?: IV1HistoricTradesQuery,
   ) => Promise<IV1HistoricTradesResultFormatted>;
   v2HistoricQuotes: (
     symbol: string,
     date: string,
-    query?: IV2HistoricQuotesQuery
+    query?: IV2HistoricQuotesQuery,
   ) => Promise<IV2HistoricQuotesResultFormatted>;
   v2HistoricTrades: (
     symbol: string,
     date: string,
-    query?: IV2HistoricTradesQuery
+    query?: IV2HistoricTradesQuery,
   ) => Promise<IV2HistoricTradesResultFormatted>;
   snapshotAllTickers: () => Promise<ISnapshotAllTickersResultFormatted>;
   snapshotSingleTicker: (
-    ticker: string
+    ticker: string,
   ) => Promise<ISnapshotSingleTickerResultFormatted>;
   snapshotGainersLosers: (
-    direction?: string
+    direction?: string,
   ) => Promise<ISnapshotGainersLosersResultFormatted>;
   previousClose: (
     ticker: string,
-    query?: IAdjustedQuery
+    query?: IAdjustedQuery,
   ) => Promise<IAggResponseFormatted>;
   aggregates: (
     ticker: string,
@@ -103,13 +103,13 @@ export interface IStocksClient {
     timespan: string,
     from: string,
     to: string,
-    query?: IAggregateQuery
+    query?: IAggregateQuery,
   ) => Promise<IAggResponseFormatted>;
   groupedDaily: (
     locale: string,
     market: string,
     date: string,
-    query?: IAdjustedQuery
+    query?: IAdjustedQuery,
   ) => Promise<IAggResponseFormatted>;
 }
 export declare const stocksClient: (apiKey: string) => IStocksClient;

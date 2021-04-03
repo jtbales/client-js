@@ -1,4 +1,4 @@
-import { ITradeV1Raw, ITradeV1Formatted } from "./v1HistoricTrades";
+import { ITradeV1Raw, ITradeV1Formatted } from './v1HistoricTrades';
 export interface IStocksSnapshotAggRaw {
   c: number;
   h: number;
@@ -19,7 +19,7 @@ export interface IStocksSnapshotAggFormatted {
   volume: number;
 }
 export declare const formatIStocksSnapshotAggRaw: (
-  raw: IStocksSnapshotAggRaw
+  raw: IStocksSnapshotAggRaw,
 ) => IStocksSnapshotAggFormatted;
 export interface IStocksSnapshotQuoteRaw {
   p: number;
@@ -41,7 +41,7 @@ export interface IStocksSnapshotQuoteFormatted {
   lastUpdateTimestamp: number;
 }
 export declare const formatIStocksSnapshotQuoteRaw: (
-  raw: IStocksSnapshotQuoteRaw
+  raw: IStocksSnapshotQuoteRaw,
 ) => IStocksSnapshotQuoteFormatted;
 export interface IStocksSnapshotTickerRaw {
   ticker: string;
@@ -66,7 +66,7 @@ export interface IStocksSnapshotTickerFormatted {
   updated: number;
 }
 export declare const formatIStocksSnapshotTickerRaw: (
-  raw: IStocksSnapshotTickerRaw
+  raw: IStocksSnapshotTickerRaw,
 ) => IStocksSnapshotTickerFormatted;
 export interface ISnapshotAllTickersResultRaw {
   status: string;
@@ -77,7 +77,7 @@ export interface ISnapshotAllTickersResultFormatted {
   tickers: IStocksSnapshotTickerFormatted[];
 }
 export declare const snapshotAllTickers: (
-  apiKey: string
+  apiKey: string,
 ) => Promise<ISnapshotAllTickersResultFormatted>;
 export interface ISnapshotSingleTickerResultRaw {
   status: string;
@@ -89,7 +89,7 @@ export interface ISnapshotSingleTickerResultFormatted {
 }
 export declare const snapshotSingleTicker: (
   apiKey: string,
-  ticker: string
+  ticker: string,
 ) => Promise<ISnapshotSingleTickerResultFormatted>;
 export interface ISnapshotGainersLosersResultRaw {
   status: string;
@@ -101,5 +101,5 @@ export interface ISnapshotGainersLosersResultFormatted {
 }
 export declare const snapshotGainersLosers: (
   apiKey: string,
-  direction?: string
+  direction?: string,
 ) => Promise<ISnapshotGainersLosersResultFormatted>;

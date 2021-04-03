@@ -3,5 +3,5 @@ export interface IConditionMappings {
 }
 export declare const conditionMappings: (
   apiKeys: string,
-  ticktype?: string
+  ticktype?: string,
 ) => Promise<IConditionMappings>;

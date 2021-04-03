@@ -15,5 +15,5 @@ export interface ILastTradeResult {
 }
 export declare const lastTradeForSymbol: (
   apiKey: string,
-  symbol: string
+  symbol: string,
 ) => Promise<ILastTradeResult>;

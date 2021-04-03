@@ -1,8 +1,8 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 import {
   ICryptoTickJsonFormatted,
-  ICryptoTickJsonRaw
-} from "./ICryptoTickJson";
+  ICryptoTickJsonRaw,
+} from './ICryptoTickJson';
 export interface IHistoricCryptoTradeRaw {
   day: string;
   map: {
@@ -40,5 +40,5 @@ export declare const historicCryptoTrades: (
   from: string,
   to: string,
   date: string,
-  query?: IHistoricCryptoTradeQuery
+  query?: IHistoricCryptoTradeQuery,
 ) => Promise<IHistoricCryptoTradeFormatted>;

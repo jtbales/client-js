@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface ITickersQuery extends IPolygonQuery {
   sort?: string;
   type?: string;
@@ -26,5 +26,5 @@ export interface ITickers {
 }
 export declare const tickers: (
   apiKey: string,
-  query?: ITickersQuery
+  query?: ITickersQuery,
 ) => Promise<ITickers[]>;

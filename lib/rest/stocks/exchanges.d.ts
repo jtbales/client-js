@@ -16,5 +16,5 @@ export interface IExchangeFormatted {
   tape: string;
 }
 export declare const exchanges: (
-  apiKey: string
+  apiKey: string,
 ) => Promise<IExchangeFormatted[]>;

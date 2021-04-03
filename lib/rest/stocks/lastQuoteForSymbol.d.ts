@@ -14,5 +14,5 @@ export interface ILastQuoteResult {
 }
 export declare const lastQuoteForSymbol: (
   apiKey: string,
-  symbol: string
+  symbol: string,
 ) => Promise<ILastQuoteResult>;

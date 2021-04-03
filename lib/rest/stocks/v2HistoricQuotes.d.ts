@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface IV2HistoricQuotesQuery extends IPolygonQuery {
   limit?: number;
   reverse?: boolean;
@@ -70,5 +70,5 @@ export declare const v2HistoricQuotes: (
   apiKey: string,
   symbol: string,
   date: string,
-  query?: IV2HistoricQuotesQuery
+  query?: IV2HistoricQuotesQuery,
 ) => Promise<IV2HistoricQuotesResultFormatted>;

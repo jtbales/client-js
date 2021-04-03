@@ -7,5 +7,5 @@ export interface IMarketHolyday {
   close?: string;
 }
 export declare const marketHolydays: (
-  apiKey: string
+  apiKey: string,
 ) => Promise<IMarketHolyday[]>;

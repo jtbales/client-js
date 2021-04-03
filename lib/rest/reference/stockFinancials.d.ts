@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface IStockFinancialQuery extends IPolygonQuery {
   sort?: string;
   type?: string;
@@ -124,5 +124,5 @@ export interface IStockFinancialResults {
 export declare const stockFinancials: (
   apiKey: string,
   symbol: string,
-  query?: IStockFinancialQuery
+  query?: IStockFinancialQuery,
 ) => Promise<IStockFinancialResults[]>;

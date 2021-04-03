@@ -1,34 +1,40 @@
-import { auth } from "../transport/request";
-import { ILocalesResponse, locales } from "./locales";
-import { IMarketHolyday, marketHolydays } from "./marketHolidays";
-import { IMarketResponse, markets } from "./markets";
-import { IMarketStatus, marketStatus } from "./marketStatus";
-import { IStockDividendsResults, stockDividends } from "./stockDividends";
+import { auth } from '../transport/request';
+import { ILocalesResponse, locales } from './locales';
+import { IMarketHolyday, marketHolydays } from './marketHolidays';
+import { IMarketResponse, markets } from './markets';
+import { IMarketStatus, marketStatus } from './marketStatus';
+import { IStockDividendsResults, stockDividends } from './stockDividends';
 import {
   IStockFinancialQuery,
   IStockFinancialResults,
-  stockFinancials
-} from "./stockFinancials";
-import { IStockSplitsResults, stockSplits } from "./stockSplits";
-import { ITickerDetailsFormatted, tickerDetails } from "./tickerDetails";
-import { ITickerNews, ITickerNewsQuery, tickerNews } from "./tickerNews";
-import { ITickers, ITickersQuery, tickers } from "./tickers";
-import { ITickerTypes, tickerTypes } from "./tickerTypes";
+  stockFinancials,
+} from './stockFinancials';
+import { IStockSplitsResults, stockSplits } from './stockSplits';
+import { ITickerDetailsFormatted, tickerDetails } from './tickerDetails';
+import { ITickerNews, ITickerNewsQuery, tickerNews } from './tickerNews';
+import { ITickers, ITickersQuery, tickers } from './tickers';
+import { IV3TickersQuery, IV3TickersResponse, v3Tickers } from './v3Tickers';
+import { ITickerTypes, tickerTypes } from './tickerTypes';
 
-export { ILocalesResponse } from "./locales";
-export { IMarketHolyday } from "./marketHolidays";
-export { IMarketResponse } from "./markets";
-export { IMarketStatus } from "./marketStatus";
-export { IStockDividendsResults } from "./stockDividends";
+export { ILocalesResponse } from './locales';
+export { IMarketHolyday } from './marketHolidays';
+export { IMarketResponse } from './markets';
+export { IMarketStatus } from './marketStatus';
+export { IStockDividendsResults } from './stockDividends';
 export {
   IStockFinancialQuery,
-  IStockFinancialResults
-} from "./stockFinancials";
-export { IStockSplitsResults } from "./stockSplits";
-export { ITickerDetailsFormatted } from "./tickerDetails";
-export { ITickerNews, ITickerNewsQuery } from "./tickerNews";
-export { ITickers, ITickersQuery } from "./tickers";
-export { ITickerTypes } from "./tickerTypes";
+  IStockFinancialResults,
+} from './stockFinancials';
+export { IStockSplitsResults } from './stockSplits';
+export { ITickerDetailsFormatted } from './tickerDetails';
+export { ITickerNews, ITickerNewsQuery } from './tickerNews';
+export { ITickers, ITickersQuery } from './tickers';
+export {
+  IV3TickersQuery,
+  IV3Ticker,
+  IV3TickersResponse as IV3Tickers,
+} from './v3Tickers';
+export { ITickerTypes } from './tickerTypes';
 
 export interface IReferenceClient {
   locales: () => Promise<ILocalesResponse>;
@@ -38,15 +44,16 @@ export interface IReferenceClient {
   stockDividends: (symbol: string) => Promise<IStockDividendsResults>;
   stockFinancials: (
     symbol: string,
-    query?: IStockFinancialQuery
+    query?: IStockFinancialQuery,
   ) => Promise<IStockFinancialResults[]>;
   stockSplits: (symbol: string) => Promise<IStockSplitsResults>;
   tickerDetails: (symbol: string) => Promise<ITickerDetailsFormatted>;
   tickerNews: (
     symbol: string,
-    query?: ITickerNewsQuery
+    query?: ITickerNewsQuery,
   ) => Promise<ITickerNews[]>;
   tickers: (query?: ITickersQuery) => Promise<ITickers[]>;
+  v3Tickers: (query?: IV3TickersQuery) => Promise<IV3TickersResponse[]>;
   tickerTypes: () => Promise<ITickerTypes>;
 }
 
@@ -61,7 +68,8 @@ export const referenceClient = (apiKey: string): IReferenceClient => ({
   tickerDetails: auth(apiKey, tickerDetails),
   tickerNews: auth(apiKey, tickerNews),
   tickers: auth(apiKey, tickers),
-  tickerTypes: auth(apiKey, tickerTypes)
+  v3Tickers: auth(apiKey, v3Tickers),
+  tickerTypes: auth(apiKey, tickerTypes),
 });
 
 export default referenceClient;

@@ -1,4 +1,4 @@
-import { ICryptoTickJsonFormatted } from "./ICryptoTickJson";
+import { ICryptoTickJsonFormatted } from './ICryptoTickJson';
 export interface ICryptoSnapshotAggFormatted {
   c: number;
   closePrice: number;
@@ -30,15 +30,15 @@ export interface ICryptoSnapshotSingleTickerFormatted {
   ticker: ICryptoSnapshotTickerFormatted;
 }
 export declare const cryptoSnapshotAllTickers: (
-  apiKey: string
+  apiKey: string,
 ) => Promise<ICryptoSnapshotAllTickersFormatted>;
 export declare const cryptoSnapshotSingleTicker: (
   apiKey: string,
-  ticker: string
+  ticker: string,
 ) => Promise<ICryptoSnapshotSingleTickerFormatted>;
 export declare const cryptoSnapshotGainersLosers: (
   apiKey: string,
-  direction?: string
+  direction?: string,
 ) => Promise<ICryptoSnapshotAllTickersFormatted>;
 export interface ICryptoSnapshotBookItemFormatted {
   p: number;
@@ -61,5 +61,5 @@ export interface ICryptoSingleTickerFullBookFormatted {
 }
 export declare const cryptoSnapshotSingleTickerFullBook: (
   apiKey: string,
-  ticker: string
+  ticker: string,
 ) => Promise<ICryptoSingleTickerFullBookFormatted>;

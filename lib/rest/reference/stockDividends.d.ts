@@ -16,5 +16,5 @@ export interface IStockDividendsResults {
 }
 export declare const stockDividends: (
   apiKey: string,
-  symbol: string
+  symbol: string,
 ) => Promise<IStockDividendsResults>;

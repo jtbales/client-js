@@ -1,4 +1,4 @@
-import { IV1ForexRaw } from "./historicForexTicks";
+import { IV1ForexRaw } from './historicForexTicks';
 export interface IForexSnapshotAggRaw {
   c: number;
   h: number;
@@ -47,9 +47,9 @@ export interface IForexSnapshotAllTickersResponseFormatted {
   tickers: IForexSnapshotTickerFormatted[];
 }
 export declare const forexSnapshotAllTickers: (
-  apiKey: string
+  apiKey: string,
 ) => Promise<IForexSnapshotAllTickersResponseFormatted>;
 export declare const forexSnapshotGainersLosers: (
   apiKey: string,
-  direction?: string
+  direction?: string,
 ) => Promise<IForexSnapshotAllTickersResponseFormatted>;

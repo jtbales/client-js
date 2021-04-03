@@ -36,5 +36,5 @@ export interface ICryptoDailyOpenCloseFormatted {
   closingTrades?: ICryptoTickJsonFormatted[];
 }
 export declare const formatICryptoTickJsonRaw: (
-  trade: ICryptoTickJsonRaw
+  trade: ICryptoTickJsonRaw,
 ) => ICryptoTickJsonFormatted;

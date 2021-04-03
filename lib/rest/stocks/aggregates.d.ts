@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface IAggV2Raw {
   T?: string;
   v: number;
@@ -44,7 +44,7 @@ export interface IAggResponseFormatted {
   results: IAggV2Formatted[];
 }
 export declare const formatIAggResponseRaw: (
-  raw: IAggResponseRaw
+  raw: IAggResponseRaw,
 ) => IAggResponseFormatted;
 export interface IAdjustedQuery extends IPolygonQuery {
   adjusted?: boolean;
@@ -56,7 +56,7 @@ export interface IAggregateQuery extends IPolygonQuery {
 export declare const stocksPreviousClose: (
   apiKey: string,
   ticker: string,
-  query?: IAdjustedQuery
+  query?: IAdjustedQuery,
 ) => Promise<IAggResponseFormatted>;
 export declare const stocksAggregates: (
   apikey: string,
@@ -65,12 +65,12 @@ export declare const stocksAggregates: (
   timespan: string,
   from: string,
   to: string,
-  query?: IAggregateQuery
+  query?: IAggregateQuery,
 ) => Promise<IAggResponseFormatted>;
 export declare const stocksGroupedDaily: (
   apiKey: string,
   locale: string,
   market: string,
   date: string,
-  query?: IAdjustedQuery
+  query?: IAdjustedQuery,
 ) => Promise<IAggResponseFormatted>;

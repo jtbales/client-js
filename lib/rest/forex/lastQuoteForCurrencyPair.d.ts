@@ -12,5 +12,5 @@ export interface ILastQuoteForCurrencyPair {
 export declare const lastQuoteForCurrencyPair: (
   apiKey: string,
   from: string,
-  to: string
+  to: string,
 ) => Promise<ILastQuoteForCurrencyPair>;

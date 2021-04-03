@@ -1,4 +1,4 @@
-import { IPolygonQuery } from "../transport/request";
+import { IPolygonQuery } from '../transport/request';
 export interface IV1HistoricTradesQuery extends IPolygonQuery {
   limit?: number;
   offset?: number;
@@ -67,11 +67,11 @@ export interface IV1HistoricTradesResultFormatted {
   ticks: ITradeV1Formatted[];
 }
 export declare const formatIV1HistoricTradesResultRaw: (
-  raw: IV1HistoricTradesResultRaw
+  raw: IV1HistoricTradesResultRaw,
 ) => IV1HistoricTradesResultFormatted;
 export declare const v1HistoricTrades: (
   apiKey: string,
   symbol: string,
   date: string,
-  query?: IV1HistoricTradesQuery
+  query?: IV1HistoricTradesQuery,
 ) => Promise<IV1HistoricTradesResultFormatted>;

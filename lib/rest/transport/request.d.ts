@@ -8,5 +8,5 @@ export declare const auth: (apiKey: any, func: any) => (...args: any[]) => any;
 export declare const get: (
   path: string,
   apiKey?: string,
-  query?: IPolygonQuery
+  query?: IPolygonQuery,
 ) => Promise<any>;

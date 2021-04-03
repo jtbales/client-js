@@ -17,5 +17,5 @@ export interface IDailyOpenClose {
 export declare const dailyOpenClose: (
   apiKey: string,
   symbol: string,
-  date: string
+  date: string,
 ) => Promise<IDailyOpenClose>;

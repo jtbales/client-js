@@ -1,5 +1,5 @@
-export declare type MarketStatus = "open" | "closed";
-export declare type MarketStatusExtended = "open" | "closed" | "extended-hours";
+export declare type MarketStatus = 'open' | 'closed';
+export declare type MarketStatusExtended = 'open' | 'closed' | 'extended-hours';
 export interface IMarketStatus {
   market: MarketStatusExtended;
   serverTime: string;
