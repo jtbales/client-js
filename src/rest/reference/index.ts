@@ -53,7 +53,7 @@ export interface IReferenceClient {
     query?: ITickerNewsQuery,
   ) => Promise<ITickerNews[]>;
   tickers: (query?: ITickersQuery) => Promise<ITickers[]>;
-  v3Tickers: (query?: IV3TickersQuery) => Promise<IV3TickersResponse[]>;
+  v3Tickers: (query?: IV3TickersQuery) => Promise<IV3TickersResponse>;
   tickerTypes: () => Promise<ITickerTypes>;
 }
 

@@ -64,7 +64,7 @@ export interface IV3Ticker {
 export const v3Tickers = async (
   apiKey: string,
   query?: IV3TickersQuery,
-): Promise<IV3TickersResponse[]> => {
+): Promise<IV3TickersResponse> => {
   const path: string = '/vX/reference/tickers';
   return get(path, apiKey, query);
 };
