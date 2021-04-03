@@ -58,5 +58,5 @@ export interface IV3Ticker {
 export declare const v3Tickers: (
   apiKey: string,
   query?: IV3TickersQuery,
-) => Promise<IV3TickersResponse[]>;
+) => Promise<IV3TickersResponse>;
 export {};
