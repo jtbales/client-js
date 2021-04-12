@@ -1,5 +1,5 @@
 // CF: https://polygon.io/docs/#!/Stocks--Equities/get_v2_ticks_stocks_nbbo_ticker_date
-import { get, IPolygonQuery } from "../transport/request";
+import { get, IPolygonQuery } from '../transport/request';
 
 export interface IV2HistoricQuotesQuery extends IPolygonQuery {
   limit?: number;
@@ -66,10 +66,10 @@ export const formatIQuoteV2Raw = (raw: IQuoteV2Raw): IQuoteV2Formatted => ({
   bidPrice: raw.p,
   bidExchangeId: raw.x,
   bidSize: raw.s,
-  askPrice: raw.p,
+  askPrice: raw.P,
   askExchangeId: raw.X,
   askSize: raw.S,
-  tapeWhereTradeOccurred: raw.z
+  tapeWhereTradeOccurred: raw.z,
 });
 
 export interface IV2HistoricQuotesResultRaw {
@@ -87,18 +87,18 @@ export interface IV2HistoricQuotesResultFormatted {
   results?: IQuoteV2Formatted[];
 }
 const formatIV2HistoricQuotesResultRaw = (
-  raw: IV2HistoricQuotesResultRaw
+  raw: IV2HistoricQuotesResultRaw,
 ): IV2HistoricQuotesResultFormatted => ({
   ...raw,
-  results: raw.results && raw.results.map(formatIQuoteV2Raw)
+  results: raw.results && raw.results.map(formatIQuoteV2Raw),
 });
 
 export const v2HistoricQuotes = async (
   apiKey: string,
   symbol: string,
   date: string,
-  query?: IV2HistoricQuotesQuery
+  query?: IV2HistoricQuotesQuery,
 ): Promise<IV2HistoricQuotesResultFormatted> =>
   formatIV2HistoricQuotesResultRaw(
-    await get(`/v2/ticks/stocks/nbbo/${symbol}/${date}`, apiKey, query)
+    await get(`/v2/ticks/stocks/nbbo/${symbol}/${date}`, apiKey, query),
   );
